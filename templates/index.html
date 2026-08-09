@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobSwipe</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>JobSwipe</h1>
+    <p>Swipe right on your dream job</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="discover">Discover</button>
+    <button class="tab-btn" data-tab="profile">Profile</button>
+    <button class="tab-btn" data-tab="matches">Matches</button>
+  </nav>
+
+  <main>
+    <section id="discover" class="tab-panel active">
+      <input type="text" id="searchInput" placeholder="Search jobs...">
+      <div id="jobList" class="job-list"></div>
+    </section>
+
+    <section id="profile" class="tab-panel">
+      <div class="profile-card">
+        <div class="profile-top">
+          <img id="photoPreview" class="avatar" src="" alt="">
+          <div class="profile-fields">
+            <input type="text" id="nameInput" placeholder="Your name">
+            <input type="text" id="titleInput" placeholder="Job title">
+          </div>
+        </div>
+        <textarea id="bioInput" rows="5" placeholder="Tell us about yourself..."></textarea>
+        <div class="field-row">
+          <label class="file-label">Choose File<input type="file" id="photoInput" accept="image/*"></label>
+          <span id="photoFileName">No file chosen</span>
+        </div>
+        <div class="field-row">
+          <label class="file-label">Choose File<input type="file" id="resumeInput" accept=".pdf,.doc,.docx"></label>
+          <span id="resumeFileName">No file chosen</span>
+        </div>
+        <button id="linkedinBtn" class="linkedin-btn">Connect LinkedIn</button>
+        <button id="saveProfileBtn" class="save-btn">Save Profile</button>
+      </div>
+    </section>
+
+    <section id="matches" class="tab-panel">
+      <h2>Your Matches</h2>
+      <ul id="matchList" class="match-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 JobSwipe. All rights reserved.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
