@@ -7,55 +7,91 @@
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <header class="hero">
-    <h1>JobSwipe</h1>
-    <p>Swipe right on your dream job</p>
-  </header>
 
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="discover">Discover</button>
-    <button class="tab-btn" data-tab="profile">Profile</button>
-    <button class="tab-btn" data-tab="matches">Matches</button>
-  </nav>
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <h1>JobSwipe</h1>
+      <p class="tagline">Swipe right on your dream job</p>
 
-  <main>
-    <section id="discover" class="tab-panel active">
-      <input type="text" id="searchInput" placeholder="Search jobs...">
-      <div id="jobList" class="job-list"></div>
-    </section>
-
-    <section id="profile" class="tab-panel">
-      <div class="profile-card">
-        <div class="profile-top">
-          <img id="photoPreview" class="avatar" src="" alt="">
-          <div class="profile-fields">
-            <input type="text" id="nameInput" placeholder="Your name">
-            <input type="text" id="titleInput" placeholder="Job title">
-          </div>
-        </div>
-        <textarea id="bioInput" rows="5" placeholder="Tell us about yourself..."></textarea>
-        <div class="field-row">
-          <label class="file-label">Choose File<input type="file" id="photoInput" accept="image/*"></label>
-          <span id="photoFileName">No file chosen</span>
-        </div>
-        <div class="field-row">
-          <label class="file-label">Choose File<input type="file" id="resumeInput" accept=".pdf,.doc,.docx"></label>
-          <span id="resumeFileName">No file chosen</span>
-        </div>
-        <button id="linkedinBtn" class="linkedin-btn">Connect LinkedIn</button>
-        <button id="saveProfileBtn" class="save-btn">Save Profile</button>
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" data-form="loginForm">Log In</button>
+        <button class="auth-tab-btn" data-form="signupForm">Sign Up</button>
       </div>
-    </section>
 
-    <section id="matches" class="tab-panel">
-      <h2>Your Matches</h2>
-      <ul id="matchList" class="match-list"></ul>
-    </section>
-  </main>
+      <form id="loginForm" class="auth-form active">
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Log In</button>
+      </form>
 
-  <footer>
-    <p>&copy; 2026 JobSwipe. All rights reserved.</p>
-  </footer>
+      <form id="signupForm" class="auth-form">
+        <input type="text" id="signupUsername" placeholder="Username" required>
+        <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required>
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <p id="authError" class="auth-error"></p>
+    </div>
+  </section>
+
+  <div id="app" class="app hidden">
+    <header class="hero">
+      <h1>JobSwipe</h1>
+      <p>Swipe right on your dream job</p>
+      <button id="logoutBtn" class="logout-btn">Log Out</button>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="discover">Discover</button>
+      <button class="tab-btn" data-tab="profile">Profile</button>
+      <button class="tab-btn" data-tab="matches">Matches</button>
+    </nav>
+
+    <main>
+      <section id="discover" class="tab-panel active">
+        <input type="text" id="searchInput" placeholder="Search jobs...">
+        <div id="swipeStack" class="swipe-stack"></div>
+        <div class="swipe-controls">
+          <button id="skipBtn" class="control-btn skip">✕ Skip</button>
+          <button id="likeBtn" class="control-btn like">♥ Save</button>
+        </div>
+        <div id="jobList" class="job-list"></div>
+      </section>
+
+      <section id="profile" class="tab-panel">
+        <div class="profile-card">
+          <div class="profile-top">
+            <img id="photoPreview" class="avatar" src="" alt="">
+            <div class="profile-fields">
+              <input type="text" id="nameInput" placeholder="Your name">
+              <input type="text" id="titleInput" placeholder="Job title">
+            </div>
+          </div>
+          <textarea id="bioInput" rows="5" placeholder="Tell us about yourself..."></textarea>
+          <div class="field-row">
+            <label class="file-label">Choose File<input type="file" id="photoInput" accept="image/*"></label>
+            <span id="photoFileName">No file chosen</span>
+          </div>
+          <div class="field-row">
+            <label class="file-label">Choose File<input type="file" id="resumeInput" accept=".pdf,.doc,.docx"></label>
+            <span id="resumeFileName">No file chosen</span>
+          </div>
+          <div id="skillsBox" class="skills-box"></div>
+          <button id="linkedinBtn" class="linkedin-btn">Connect LinkedIn</button>
+          <button id="saveProfileBtn" class="save-btn">Save Profile</button>
+        </div>
+      </section>
+
+      <section id="matches" class="tab-panel">
+        <h2>Your Matches</h2>
+        <ul id="matchList" class="match-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 JobSwipe. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script src="/static/app.js"></script>
 </body>
