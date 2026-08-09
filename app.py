@@ -10,7 +10,10 @@ from db import get_db, init_db
 from skills import extract_text_from_file, detect_skills, detect_skill_counts
 
 BASE_DIR = Path(__file__).resolve().parent
-UPLOAD_DIR = BASE_DIR / "uploads"
+if os.environ.get("VERCEL"):
+    UPLOAD_DIR = Path("/tmp/uploads")
+else:
+    UPLOAD_DIR = BASE_DIR / "uploads"
 PHOTO_DIR = UPLOAD_DIR / "photos"
 RESUME_DIR = UPLOAD_DIR / "resumes"
 PHOTO_DIR.mkdir(parents=True, exist_ok=True)
@@ -21,6 +24,10 @@ PHOTO_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-change-me")
+if os.environ.get("VERCEL") and app.secret_key == "dev-secret-change-me":
+    # Sessions will still work but won't survive a redeploy. Set SECRET_KEY
+    # in Vercel's Environment Variables for stable sessions.
+    pass
 app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
 
 init_db()
@@ -137,6 +144,11 @@ def me():
 @app.route("/")
 def index():
     return send_from_directory("templates", "index.html")
+
+
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    return send_from_directory(BASE_DIR / "static", filename)
 
 
 @app.route("/api/jobs")

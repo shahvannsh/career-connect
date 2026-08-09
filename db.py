@@ -1,7 +1,14 @@
+import os
 import sqlite3
 from pathlib import Path
 
-DB_PATH = Path(__file__).resolve().parent / "jobswipe.db"
+# Vercel's filesystem is read-only except /tmp, and /tmp is wiped between
+# invocations — so on Vercel this DB resets often. That's expected for a
+# quick deploy; swap for a real hosted DB (Postgres) to persist data.
+if os.environ.get("VERCEL"):
+    DB_PATH = Path("/tmp/jobswipe.db")
+else:
+    DB_PATH = Path(__file__).resolve().parent / "jobswipe.db"
 
 
 def get_db():
