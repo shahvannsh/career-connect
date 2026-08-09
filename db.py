@@ -29,6 +29,7 @@ def init_db():
         photo TEXT DEFAULT '',
         resume TEXT DEFAULT '',
         skills TEXT DEFAULT '',
+        skill_weights TEXT DEFAULT '{}',
         linkedin_connected INTEGER DEFAULT 0
     );
 
@@ -51,5 +52,9 @@ def init_db():
         PRIMARY KEY (user_id, job_id)
     );
     """)
+    # Migration safety net: add column if an older DB already exists without it.
+    cols = [r["name"] for r in conn.execute("PRAGMA table_info(profiles)")]
+    if "skill_weights" not in cols:
+        conn.execute("ALTER TABLE profiles ADD COLUMN skill_weights TEXT DEFAULT '{}'")
     conn.commit()
     conn.close()

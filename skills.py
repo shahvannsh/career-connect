@@ -10,7 +10,7 @@ KNOWN_SKILLS = [
     "React", "PHP", "GraphQL", "PyTorch",
     "Robotics", "Node.js", "Microservices",
     "JavaScript", "SQL", "Docker", "Linux", "Git",
-    "HTML", "CSS", "Flask", "Django", "REST", "Agile",
+    "HTML", "CSS", "Flask", "Django", "REST", "Agile", "Ruby",
 ]
 
 
@@ -37,13 +37,20 @@ def extract_text_from_file(path: Path) -> str:
     return ""
 
 
-def detect_skills(text: str):
+def detect_skills(text: str) -> list:
+    """Returns list of matched skill names (order preserved from KNOWN_SKILLS)."""
+    return list(detect_skill_counts(text).keys())
+
+
+def detect_skill_counts(text: str) -> dict:
+    """Returns {skill_name: occurrence_count} for skills found in text."""
     if not text:
-        return []
+        return {}
     text_low = text.lower()
-    found = []
+    counts = {}
     for skill in KNOWN_SKILLS:
         pattern = r"\b" + re.escape(skill.lower()) + r"\b"
-        if re.search(pattern, text_low):
-            found.append(skill)
-    return found
+        matches = re.findall(pattern, text_low)
+        if matches:
+            counts[skill] = len(matches)
+    return counts

@@ -287,13 +287,14 @@ async function loadProfile() {
     photoFileName.textContent = profile.photo;
   }
   if (profile.resume) resumeFileName.textContent = profile.resume;
-  renderSkills(profile.skills || []);
+  renderSkills(profile.skills || [], profile.resumeSkills || []);
   updateLinkedinBtn(profile.linkedin_connected);
 }
 
-function renderSkills(skills) {
+function renderSkills(skills, resumeSkills = []) {
+  const resumeSet = new Set(resumeSkills);
   skillsBox.innerHTML = skills.length
-    ? skills.map(s => `<span class="skill-chip">${s}</span>`).join("")
+    ? skills.map(s => `<span class="skill-chip${resumeSet.has(s) ? " from-resume" : ""}">${s}${resumeSet.has(s) ? " 📄" : ""}</span>`).join("")
     : "<span style='color:#999;font-size:13px;'>No skills detected yet — add a bio or upload a resume.</span>";
 }
 
@@ -332,7 +333,7 @@ saveProfileBtn.addEventListener("click", async () => {
 
   const res = await fetch("/api/profile", { method: "POST", body: formData });
   const data = await res.json();
-  renderSkills(data.skills || []);
+  renderSkills(data.skills || [], data.resumeSkills || []);
   showToast("Profile saved!");
   loadJobs();
 });

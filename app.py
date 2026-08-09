@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 
 from db import get_db, init_db
-from skills import extract_text_from_file, detect_skills
+from skills import extract_text_from_file, detect_skills, detect_skill_counts
 
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "uploads"
@@ -25,24 +25,10 @@ app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
 
 init_db()
 
-COMPANIES = [
-    {"id": 1, "name": "Apple Inc.", "industry": "Technology", "marketCap": "$391.04 billion",
-     "logo": "🍎", "salary": "$165,000/year", "requiredSkills": ["Swift", "iOS", "Objective-C", "Product Design"]},
-    {"id": 2, "name": "Amazon.com Inc.", "industry": "E-commerce & Cloud Computing", "marketCap": "$637.96 billion",
-     "logo": "📦", "salary": "$155,000/year", "requiredSkills": ["AWS", "Java", "Python", "Distributed Systems"]},
-    {"id": 3, "name": "Alphabet Inc. (Google)", "industry": "Technology", "marketCap": "$350.02 billion",
-     "logo": "🔍", "salary": "$180,000/year", "requiredSkills": ["Python", "Machine Learning", "Go", "Kubernetes"]},
-    {"id": 4, "name": "Microsoft Corporation", "industry": "Technology", "marketCap": "$412.87 billion",
-     "logo": "🪟", "salary": "$170,000/year", "requiredSkills": ["C#", ".NET", "Azure", "TypeScript"]},
-    {"id": 5, "name": "Samsung Electronics", "industry": "Electronics & Technology", "marketCap": "$298.5 billion",
-     "logo": "📱", "salary": "$140,000/year", "requiredSkills": ["Android", "Kotlin", "Embedded Systems", "C++"]},
-    {"id": 6, "name": "Meta Platforms Inc.", "industry": "Social Media & Technology", "marketCap": "$310.4 billion",
-     "logo": "👥", "salary": "$175,000/year", "requiredSkills": ["React", "PHP", "GraphQL", "PyTorch"]},
-    {"id": 7, "name": "Tesla Inc.", "industry": "Automotive & Energy", "marketCap": "$220.1 billion",
-     "logo": "🚗", "salary": "$150,000/year", "requiredSkills": ["C++", "Robotics", "Embedded Systems", "Python"]},
-    {"id": 8, "name": "Netflix Inc.", "industry": "Media & Entertainment", "marketCap": "$95.3 billion",
-     "logo": "🎬", "salary": "$190,000/year", "requiredSkills": ["Java", "Microservices", "AWS", "Node.js"]},
-]
+import json as _json
+
+with open(BASE_DIR / "companies.json") as _f:
+    COMPANIES = _json.load(_f)
 
 
 def login_required(f):
@@ -54,13 +40,33 @@ def login_required(f):
     return wrapper
 
 
-def compatibility(profile_skills, company):
-    if not profile_skills:
+def compatibility(skill_weights: dict, company: dict) -> int:
+    """
+    skill_weights: {skill_name: weight}, weight > 1 means it came from the
+    resume (stronger signal) or was mentioned multiple times.
+    """
+    if not skill_weights:
         return 0
-    skills_lower = {s.lower() for s in profile_skills}
     required = company["requiredSkills"]
-    matched = sum(1 for s in required if s.lower() in skills_lower)
-    return int((matched / len(required)) * 100)
+    if not required:
+        return 0
+
+    lower_weights = {k.lower(): v for k, v in skill_weights.items()}
+    earned = 0.0
+    for skill in required:
+        earned += lower_weights.get(skill.lower(), 0)
+
+    # each required skill is worth 1 "point" baseline; resume/frequency weighting
+    # can push a single matched skill above 1, so cap contribution per skill at 1.3
+    earned_capped = 0.0
+    for skill in required:
+        earned_capped += min(lower_weights.get(skill.lower(), 0), 1.3)
+
+    score = (earned_capped / len(required)) * 100
+
+    # small bonus for broad overall skill coverage beyond just this job's requirements
+    breadth_bonus = min(len(skill_weights) * 0.5, 8)
+    return int(min(100, round(score + breadth_bonus)))
 
 
 # ---------- Auth ----------
@@ -144,14 +150,13 @@ def get_jobs():
     skipped_ids = {r["job_id"] for r in conn.execute("SELECT job_id FROM skipped WHERE user_id = ?", (user_id,))}
     conn.close()
 
-    profile_skills = (profile["skills"] or "").split(",") if profile else []
-    profile_skills = [s for s in profile_skills if s]
+    profile_weights = _json.loads(profile["skill_weights"]) if profile and profile["skill_weights"] else {}
 
     jobs = []
     for c in COMPANIES:
         jobs.append({
             **c,
-            "compatibility": compatibility(profile_skills, c),
+            "compatibility": compatibility(profile_weights, c),
             "saved": c["id"] in saved_ids,
             "applied": c["id"] in applied_ids,
             "skipped": c["id"] in skipped_ids,
@@ -221,7 +226,9 @@ def get_profile():
         return jsonify({})
     result = dict(profile)
     result["linkedin_connected"] = bool(result["linkedin_connected"])
-    result["skills"] = [s for s in (result["skills"] or "").split(",") if s]
+    weights = _json.loads(result.get("skill_weights") or "{}")
+    result["skills"] = sorted(weights.keys())
+    result["resumeSkills"] = sorted([s for s, w in weights.items() if w > 1.0])
     return jsonify(result)
 
 
@@ -238,11 +245,12 @@ def update_profile():
     bio = body.get("bio", profile["bio"])
     photo = profile["photo"]
     resume = profile["resume"]
-    skills_set = set((profile["skills"] or "").split(","))
-    skills_set.discard("")
 
-    # detect skills from title + bio text too
-    skills_set.update(detect_skills(f"{title} {bio}"))
+    # Existing weights carry forward; re-derive from title/bio each save so
+    # edits are reflected immediately.
+    weights = {}
+    for skill, count in detect_skill_counts(f"{title} {bio}").items():
+        weights[skill] = 1.0  # bio/title mention: baseline signal
 
     photo_file = request.files.get("photo")
     if photo_file and photo_file.filename:
@@ -257,6 +265,7 @@ def update_profile():
             photo = filename
 
     resume_file = request.files.get("resume")
+    resume_counts = {}
     if resume_file and resume_file.filename:
         ext = os.path.splitext(resume_file.filename)[1].lower()
         if ext in RESUME_EXT:
@@ -270,13 +279,25 @@ def update_profile():
             resume = filename
 
             resume_text = extract_text_from_file(save_path)
-            skills_set.update(detect_skills(resume_text))
+            resume_counts = detect_skill_counts(resume_text)
+    elif resume:
+        # No new upload this save, but a resume already exists on disk —
+        # keep its skill signal alive by re-reading it.
+        existing_path = RESUME_DIR / resume
+        if existing_path.exists():
+            resume_counts = detect_skill_counts(extract_text_from_file(existing_path))
 
-    skills_str = ",".join(sorted(skills_set))
+    # Resume mentions are a stronger, more credible signal than free-text bio.
+    # Weight = 1.0 base + up to +0.3 for repeated mentions (capped).
+    for skill, count in resume_counts.items():
+        boost = min((count - 1) * 0.1, 0.3)
+        weights[skill] = max(weights.get(skill, 0), 1.0 + boost)
+
+    skills_str = ",".join(sorted(weights.keys()))
 
     conn.execute(
-        "UPDATE profiles SET name=?, title=?, bio=?, photo=?, resume=?, skills=? WHERE user_id=?",
-        (name, title, bio, photo, resume, skills_str, user_id),
+        "UPDATE profiles SET name=?, title=?, bio=?, photo=?, resume=?, skills=?, skill_weights=? WHERE user_id=?",
+        (name, title, bio, photo, resume, skills_str, _json.dumps(weights), user_id),
     )
     conn.commit()
     conn.close()
@@ -284,7 +305,8 @@ def update_profile():
     return jsonify({
         "name": name, "title": title, "bio": bio,
         "photo": photo, "resume": resume,
-        "skills": [s for s in skills_str.split(",") if s],
+        "skills": sorted(weights.keys()),
+        "resumeSkills": sorted([s for s, w in weights.items() if w > 1.0]),
     })
 
 

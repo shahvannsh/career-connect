@@ -1,0 +1,1389 @@
+[
+  {
+    "id": 1,
+    "name": "Apple Inc.",
+    "industry": "Technology",
+    "marketCap": "$391.04 billion",
+    "logo": "\ud83c\udf4e",
+    "salary": "$165,000/year",
+    "requiredSkills": [
+      "Swift",
+      "iOS",
+      "Objective-C",
+      "Product Design"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Amazon.com Inc.",
+    "industry": "E-commerce",
+    "marketCap": "$637.96 billion",
+    "logo": "\ud83d\udce6",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "AWS",
+      "Java",
+      "Python",
+      "SQL"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Alphabet Inc. (Google)",
+    "industry": "AI & Machine Learning",
+    "marketCap": "$350.02 billion",
+    "logo": "\ud83d\udd0d",
+    "salary": "$180,000/year",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "Kubernetes"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Microsoft Corporation",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$412.87 billion",
+    "logo": "\ud83e\ude9f",
+    "salary": "$170,000/year",
+    "requiredSkills": [
+      "C#",
+      ".NET",
+      "Azure",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Samsung Electronics",
+    "industry": "Semiconductors",
+    "marketCap": "$298.5 billion",
+    "logo": "\ud83d\udcf1",
+    "salary": "$140,000/year",
+    "requiredSkills": [
+      "Android",
+      "Kotlin",
+      "Embedded Systems",
+      "C++"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Meta Platforms Inc.",
+    "industry": "Social Media",
+    "marketCap": "$310.4 billion",
+    "logo": "\ud83d\udc65",
+    "salary": "$175,000/year",
+    "requiredSkills": [
+      "React",
+      "PHP",
+      "GraphQL",
+      "PyTorch"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Tesla Inc.",
+    "industry": "Automotive",
+    "marketCap": "$220.1 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$150,000/year",
+    "requiredSkills": [
+      "C++",
+      "Robotics",
+      "Embedded Systems",
+      "Python"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Netflix Inc.",
+    "industry": "Media & Entertainment",
+    "marketCap": "$95.3 billion",
+    "logo": "\ud83c\udfac",
+    "salary": "$190,000/year",
+    "requiredSkills": [
+      "Java",
+      "Microservices",
+      "AWS",
+      "Node.js"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "NVIDIA Corporation",
+    "industry": "Semiconductors",
+    "marketCap": "$1.15 trillion",
+    "logo": "\ud83d\udda5\ufe0f",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "C++",
+      "Machine Learning",
+      "PyTorch",
+      "Linux"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "IBM",
+    "industry": "Technology",
+    "marketCap": "$165.2 billion",
+    "logo": "\ud83d\udcbc",
+    "salary": "$135,000/year",
+    "requiredSkills": [
+      "Java",
+      "Python",
+      "SQL",
+      "Docker"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Oracle Corporation",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$310.8 billion",
+    "logo": "\ud83d\uddc4\ufe0f",
+    "salary": "$145,000/year",
+    "requiredSkills": [
+      "SQL",
+      "Java",
+      ".NET",
+      "Linux"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Salesforce Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$248.6 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$150,000/year",
+    "requiredSkills": [
+      "JavaScript",
+      "REST",
+      "Agile",
+      "SQL"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Adobe Inc.",
+    "industry": "Technology",
+    "marketCap": "$220.4 billion",
+    "logo": "\ud83c\udfa8",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "C++",
+      "JavaScript",
+      "Product Design",
+      "Git"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Uber Technologies",
+    "industry": "Logistics",
+    "marketCap": "$142.7 billion",
+    "logo": "\ud83d\ude95",
+    "salary": "$160,000/year",
+    "requiredSkills": [
+      "Python",
+      "Microservices",
+      "Kubernetes"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Airbnb Inc.",
+    "industry": "Travel & Hospitality",
+    "marketCap": "$88.9 billion",
+    "logo": "\ud83c\udfe0",
+    "salary": "$158,000/year",
+    "requiredSkills": [
+      "React",
+      "Java",
+      "AWS",
+      "REST"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Spotify Technology",
+    "industry": "Media & Entertainment",
+    "marketCap": "$45.3 billion",
+    "logo": "\ud83c\udfa7",
+    "salary": "$148,000/year",
+    "requiredSkills": [
+      "Python",
+      "Java",
+      "React",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Intel Corporation",
+    "industry": "Semiconductors",
+    "marketCap": "$102.5 billion",
+    "logo": "\ud83d\udd27",
+    "salary": "$142,000/year",
+    "requiredSkills": [
+      "C++",
+      "Embedded Systems",
+      "Linux",
+      "Python"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "PayPal Holdings",
+    "industry": "Fintech",
+    "marketCap": "$68.4 billion",
+    "logo": "\ud83d\udcb3",
+    "salary": "$147,000/year",
+    "requiredSkills": [
+      "Java",
+      "Python",
+      "SQL",
+      "REST"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Shopify Inc.",
+    "industry": "E-commerce",
+    "marketCap": "$105.6 billion",
+    "logo": "\ud83d\udecd\ufe0f",
+    "salary": "$140,000/year",
+    "requiredSkills": [
+      "Ruby",
+      "React",
+      "GraphQL",
+      "REST"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "SpaceX",
+    "industry": "Aerospace",
+    "marketCap": "$180.0 billion",
+    "logo": "\ud83d\ude80",
+    "salary": "$165,000/year",
+    "requiredSkills": [
+      "C++",
+      "Python",
+      "Robotics",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Cisco Systems",
+    "industry": "Telecommunications",
+    "marketCap": "$198.3 billion",
+    "logo": "\ud83d\udce1",
+    "salary": "$130,000/year",
+    "requiredSkills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Python"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Qualcomm Inc.",
+    "industry": "Semiconductors",
+    "marketCap": "$178.5 billion",
+    "logo": "\ud83d\udd2c",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "Embedded Systems",
+      "Robotics",
+      "Linux",
+      "C++"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Dell Technologies",
+    "industry": "Technology",
+    "marketCap": "$85.7 billion",
+    "logo": "\ud83d\udcbb",
+    "salary": "$95,000/year",
+    "requiredSkills": [
+      "Git",
+      "Java",
+      "Kubernetes",
+      "Python"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "HP Inc.",
+    "industry": "Technology",
+    "marketCap": "$32.1 billion",
+    "logo": "\ud83d\udcbb",
+    "salary": "$190,000/year",
+    "requiredSkills": [
+      "Java",
+      "React",
+      "Git",
+      "AWS"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Sony Group Corporation",
+    "industry": "Gaming",
+    "marketCap": "$118.9 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$130,000/year",
+    "requiredSkills": [
+      "C++",
+      "Linux",
+      "C#",
+      "Git"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Nintendo Co., Ltd.",
+    "industry": "Gaming",
+    "marketCap": "$68.2 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$215,000/year",
+    "requiredSkills": [
+      "Git",
+      "Linux",
+      "Python",
+      "C++"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Electronic Arts",
+    "industry": "Gaming",
+    "marketCap": "$38.4 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$135,000/year",
+    "requiredSkills": [
+      "Agile",
+      "C#",
+      "Git",
+      "Python"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Activision Blizzard",
+    "industry": "Gaming",
+    "marketCap": "$65.1 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$105,000/year",
+    "requiredSkills": [
+      "C#",
+      "Agile",
+      "Python",
+      "C++"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Epic Games",
+    "industry": "Gaming",
+    "marketCap": "$31.5 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$190,000/year",
+    "requiredSkills": [
+      "Git",
+      "C++",
+      "Python",
+      "Linux"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Ubisoft Entertainment",
+    "industry": "Gaming",
+    "marketCap": "$5.2 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "Python",
+      "C++",
+      "Git",
+      "Product Design"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Square Enix",
+    "industry": "Gaming",
+    "marketCap": "$4.1 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$185,000/year",
+    "requiredSkills": [
+      "C++",
+      "Linux",
+      "Python",
+      "Product Design"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Riot Games",
+    "industry": "Gaming",
+    "marketCap": "$10.0 billion",
+    "logo": "\ud83c\udfae",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "C#",
+      "Product Design",
+      "C++",
+      "Linux"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Palantir Technologies",
+    "industry": "AI & Machine Learning",
+    "marketCap": "$52.3 billion",
+    "logo": "\ud83e\udd16",
+    "salary": "$130,000/year",
+    "requiredSkills": [
+      "Machine Learning",
+      "AWS",
+      "PyTorch",
+      "Python"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "OpenAI",
+    "industry": "AI & Machine Learning",
+    "marketCap": "$90.0 billion",
+    "logo": "\ud83e\udd16",
+    "salary": "$195,000/year",
+    "requiredSkills": [
+      "Machine Learning",
+      "PyTorch",
+      "AWS"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Anthropic",
+    "industry": "AI & Machine Learning",
+    "marketCap": "$61.5 billion",
+    "logo": "\ud83e\udd16",
+    "salary": "$125,000/year",
+    "requiredSkills": [
+      "SQL",
+      "Machine Learning",
+      "PyTorch",
+      "Linux"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "DeepMind",
+    "industry": "AI & Machine Learning",
+    "marketCap": "$15.0 billion",
+    "logo": "\ud83e\udd16",
+    "salary": "$190,000/year",
+    "requiredSkills": [
+      "Python",
+      "SQL",
+      "AWS"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Databricks",
+    "industry": "AI & Machine Learning",
+    "marketCap": "$43.0 billion",
+    "logo": "\ud83e\udd16",
+    "salary": "$120,000/year",
+    "requiredSkills": [
+      "PyTorch",
+      "Python",
+      "SQL",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Snowflake Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$52.8 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "Azure",
+      "Docker",
+      "SQL",
+      ".NET"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Workday Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$58.9 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$145,000/year",
+    "requiredSkills": [
+      "SQL",
+      "Java",
+      ".NET",
+      "Linux"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "ServiceNow",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$142.6 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$185,000/year",
+    "requiredSkills": [
+      "Azure",
+      "SQL",
+      "Java",
+      ".NET"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Atlassian Corporation",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$44.2 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "Linux",
+      "SQL",
+      ".NET",
+      "Azure"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "HubSpot Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$28.7 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$115,000/year",
+    "requiredSkills": [
+      "Linux",
+      "Azure",
+      ".NET",
+      "SQL"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Zoom Video Communications",
+    "industry": "Technology",
+    "marketCap": "$21.3 billion",
+    "logo": "\ud83d\udcbb",
+    "salary": "$185,000/year",
+    "requiredSkills": [
+      "React",
+      "Git",
+      "AWS",
+      "Docker"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Slack Technologies",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$27.7 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$130,000/year",
+    "requiredSkills": [
+      "Azure",
+      "AWS",
+      "Docker",
+      "SQL"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Dropbox Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$8.5 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$215,000/year",
+    "requiredSkills": [
+      ".NET",
+      "AWS",
+      "Azure",
+      "Java"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Box Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$4.2 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "Java",
+      "Docker",
+      ".NET",
+      "AWS"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Twilio Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$11.8 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "Azure",
+      "AWS",
+      "Java",
+      "Docker"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "DocuSign Inc.",
+    "industry": "Cloud & Enterprise Software",
+    "marketCap": "$12.4 billion",
+    "logo": "\u2601\ufe0f",
+    "salary": "$180,000/year",
+    "requiredSkills": [
+      "AWS",
+      "Azure",
+      "Docker",
+      "SQL"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Palo Alto Networks",
+    "industry": "Cybersecurity",
+    "marketCap": "$118.6 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$145,000/year",
+    "requiredSkills": [
+      "Python",
+      "Docker",
+      "Git"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "CrowdStrike Holdings",
+    "industry": "Cybersecurity",
+    "marketCap": "$78.9 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$165,000/year",
+    "requiredSkills": [
+      "Python",
+      "Git",
+      "Docker"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Fortinet Inc.",
+    "industry": "Cybersecurity",
+    "marketCap": "$52.3 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$110,000/year",
+    "requiredSkills": [
+      "Python",
+      "Linux",
+      "SQL"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Okta Inc.",
+    "industry": "Cybersecurity",
+    "marketCap": "$16.8 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$150,000/year",
+    "requiredSkills": [
+      "Docker",
+      "Python",
+      "Linux"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Zscaler Inc.",
+    "industry": "Cybersecurity",
+    "marketCap": "$28.4 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$145,000/year",
+    "requiredSkills": [
+      "Linux",
+      "SQL",
+      "Python"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "SentinelOne",
+    "industry": "Cybersecurity",
+    "marketCap": "$6.9 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$140,000/year",
+    "requiredSkills": [
+      "Git",
+      "Python",
+      "SQL",
+      "Linux"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Rapid7",
+    "industry": "Cybersecurity",
+    "marketCap": "$3.1 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$105,000/year",
+    "requiredSkills": [
+      "Linux",
+      "Python",
+      "Docker"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Norton LifeLock",
+    "industry": "Cybersecurity",
+    "marketCap": "$14.2 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$215,000/year",
+    "requiredSkills": [
+      "Python",
+      "Git",
+      "Docker"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "McAfee Corp",
+    "industry": "Cybersecurity",
+    "marketCap": "$12.0 billion",
+    "logo": "\ud83d\udee1\ufe0f",
+    "salary": "$120,000/year",
+    "requiredSkills": [
+      "Linux",
+      "Docker",
+      "Git",
+      "Python"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Stripe Inc.",
+    "industry": "Fintech",
+    "marketCap": "$65.0 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$125,000/year",
+    "requiredSkills": [
+      "Microservices",
+      "Docker",
+      "Python",
+      "REST"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Square (Block Inc.)",
+    "industry": "Fintech",
+    "marketCap": "$45.6 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "REST",
+      "AWS",
+      "SQL",
+      "Docker"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Coinbase Global",
+    "industry": "Fintech",
+    "marketCap": "$52.1 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$110,000/year",
+    "requiredSkills": [
+      "AWS",
+      "REST",
+      "Microservices",
+      "Python"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Robinhood Markets",
+    "industry": "Fintech",
+    "marketCap": "$18.9 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$95,000/year",
+    "requiredSkills": [
+      "REST",
+      "Python",
+      "Java",
+      "SQL"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Visa Inc.",
+    "industry": "Fintech",
+    "marketCap": "$520.3 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$105,000/year",
+    "requiredSkills": [
+      "REST",
+      "Microservices",
+      "Python",
+      "Java"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Mastercard Inc.",
+    "industry": "Fintech",
+    "marketCap": "$412.7 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$145,000/year",
+    "requiredSkills": [
+      "Java",
+      "Python",
+      "Docker",
+      "AWS"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "American Express",
+    "industry": "Fintech",
+    "marketCap": "$158.4 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "Python",
+      "Microservices",
+      "Docker",
+      "SQL"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Goldman Sachs",
+    "industry": "Fintech",
+    "marketCap": "$142.6 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$210,000/year",
+    "requiredSkills": [
+      "Docker",
+      "Python",
+      "Microservices"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "JPMorgan Chase",
+    "industry": "Fintech",
+    "marketCap": "$520.8 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$125,000/year",
+    "requiredSkills": [
+      "Docker",
+      "Python",
+      "REST",
+      "AWS"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Morgan Stanley",
+    "industry": "Fintech",
+    "marketCap": "$168.9 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$150,000/year",
+    "requiredSkills": [
+      "Python",
+      "Java",
+      "AWS",
+      "REST"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Wells Fargo",
+    "industry": "Fintech",
+    "marketCap": "$198.5 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "Python",
+      "REST",
+      "Docker",
+      "Java"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Citigroup Inc.",
+    "industry": "Fintech",
+    "marketCap": "$112.4 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$110,000/year",
+    "requiredSkills": [
+      "Python",
+      "Java",
+      "REST",
+      "SQL"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Klarna Bank",
+    "industry": "Fintech",
+    "marketCap": "$14.6 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$165,000/year",
+    "requiredSkills": [
+      "REST",
+      "Python",
+      "Microservices"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Affirm Holdings",
+    "industry": "Fintech",
+    "marketCap": "$16.2 billion",
+    "logo": "\ud83d\udcb0",
+    "salary": "$165,000/year",
+    "requiredSkills": [
+      "SQL",
+      "REST",
+      "Python",
+      "Docker"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Walmart Inc.",
+    "industry": "Retail",
+    "marketCap": "$598.7 billion",
+    "logo": "\ud83c\udfec",
+    "salary": "$100,000/year",
+    "requiredSkills": [
+      "SQL",
+      "React",
+      "REST",
+      "Python"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Target Corporation",
+    "industry": "Retail",
+    "marketCap": "$78.4 billion",
+    "logo": "\ud83c\udfec",
+    "salary": "$120,000/year",
+    "requiredSkills": [
+      "REST",
+      "React",
+      "Python",
+      "Java"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Costco Wholesale",
+    "industry": "Retail",
+    "marketCap": "$342.1 billion",
+    "logo": "\ud83c\udfec",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "Python",
+      "REST",
+      "SQL",
+      "React"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Best Buy Co.",
+    "industry": "Retail",
+    "marketCap": "$18.9 billion",
+    "logo": "\ud83c\udfec",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "React",
+      "SQL",
+      "Python",
+      "REST"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Home Depot",
+    "industry": "Retail",
+    "marketCap": "$362.5 billion",
+    "logo": "\ud83c\udfec",
+    "salary": "$205,000/year",
+    "requiredSkills": [
+      "Java",
+      "Python",
+      "SQL",
+      "REST"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Etsy Inc.",
+    "industry": "E-commerce",
+    "marketCap": "$8.4 billion",
+    "logo": "\ud83d\uded2",
+    "salary": "$125,000/year",
+    "requiredSkills": [
+      "JavaScript",
+      "Node.js",
+      "REST",
+      "Python"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "eBay Inc.",
+    "industry": "E-commerce",
+    "marketCap": "$28.6 billion",
+    "logo": "\ud83d\uded2",
+    "salary": "$100,000/year",
+    "requiredSkills": [
+      "React",
+      "AWS",
+      "GraphQL",
+      "REST"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Wayfair Inc.",
+    "industry": "E-commerce",
+    "marketCap": "$6.2 billion",
+    "logo": "\ud83d\uded2",
+    "salary": "$170,000/year",
+    "requiredSkills": [
+      "GraphQL",
+      "React",
+      "REST",
+      "AWS"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Chewy Inc.",
+    "industry": "E-commerce",
+    "marketCap": "$12.8 billion",
+    "logo": "\ud83d\uded2",
+    "salary": "$120,000/year",
+    "requiredSkills": [
+      "Python",
+      "React",
+      "AWS",
+      "REST"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Instacart",
+    "industry": "E-commerce",
+    "marketCap": "$9.5 billion",
+    "logo": "\ud83d\uded2",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "Node.js",
+      "AWS",
+      "React",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "DoorDash Inc.",
+    "industry": "Logistics",
+    "marketCap": "$62.3 billion",
+    "logo": "\ud83d\ude9a",
+    "salary": "$190,000/year",
+    "requiredSkills": [
+      "Python",
+      "SQL",
+      "Java",
+      "Microservices"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Lyft Inc.",
+    "industry": "Logistics",
+    "marketCap": "$5.8 billion",
+    "logo": "\ud83d\ude9a",
+    "salary": "$135,000/year",
+    "requiredSkills": [
+      "Python",
+      "AWS",
+      "Java",
+      "SQL"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "FedEx Corporation",
+    "industry": "Logistics",
+    "marketCap": "$62.4 billion",
+    "logo": "\ud83d\ude9a",
+    "salary": "$155,000/year",
+    "requiredSkills": [
+      "SQL",
+      "Java",
+      "Python",
+      "Microservices"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "UPS Inc.",
+    "industry": "Logistics",
+    "marketCap": "$118.6 billion",
+    "logo": "\ud83d\ude9a",
+    "salary": "$215,000/year",
+    "requiredSkills": [
+      "SQL",
+      "Java",
+      "Microservices",
+      "AWS"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Maersk",
+    "industry": "Logistics",
+    "marketCap": "$42.3 billion",
+    "logo": "\ud83d\ude9a",
+    "salary": "$105,000/year",
+    "requiredSkills": [
+      "Python",
+      "Microservices",
+      "SQL",
+      "AWS"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "XPO Logistics",
+    "industry": "Logistics",
+    "marketCap": "$8.9 billion",
+    "logo": "\ud83d\ude9a",
+    "salary": "$115,000/year",
+    "requiredSkills": [
+      "Microservices",
+      "SQL",
+      "Java",
+      "AWS"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Boeing Company",
+    "industry": "Aerospace",
+    "marketCap": "$118.5 billion",
+    "logo": "\ud83d\udef0\ufe0f",
+    "salary": "$140,000/year",
+    "requiredSkills": [
+      "Robotics",
+      "C++",
+      "Embedded Systems",
+      "Python"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Lockheed Martin",
+    "industry": "Aerospace",
+    "marketCap": "$112.4 billion",
+    "logo": "\ud83d\udef0\ufe0f",
+    "salary": "$190,000/year",
+    "requiredSkills": [
+      "Python",
+      "Embedded Systems",
+      "Robotics",
+      "Linux"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Northrop Grumman",
+    "industry": "Aerospace",
+    "marketCap": "$78.6 billion",
+    "logo": "\ud83d\udef0\ufe0f",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "Linux",
+      "C++",
+      "Robotics",
+      "Python"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Raytheon Technologies",
+    "industry": "Aerospace",
+    "marketCap": "$142.8 billion",
+    "logo": "\ud83d\udef0\ufe0f",
+    "salary": "$110,000/year",
+    "requiredSkills": [
+      "C++",
+      "Python",
+      "Embedded Systems",
+      "Linux"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Blue Origin",
+    "industry": "Aerospace",
+    "marketCap": "$24.0 billion",
+    "logo": "\ud83d\udef0\ufe0f",
+    "salary": "$190,000/year",
+    "requiredSkills": [
+      "Linux",
+      "Python",
+      "Embedded Systems",
+      "Robotics"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Rocket Lab",
+    "industry": "Aerospace",
+    "marketCap": "$5.2 billion",
+    "logo": "\ud83d\udef0\ufe0f",
+    "salary": "$175,000/year",
+    "requiredSkills": [
+      "Python",
+      "Robotics",
+      "C++",
+      "Linux"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Ford Motor Company",
+    "industry": "Automotive",
+    "marketCap": "$48.6 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$195,000/year",
+    "requiredSkills": [
+      "Robotics",
+      "Python",
+      "C++",
+      "Linux"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "General Motors",
+    "industry": "Automotive",
+    "marketCap": "$52.4 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$145,000/year",
+    "requiredSkills": [
+      "Robotics",
+      "Python",
+      "C++",
+      "Linux"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Rivian Automotive",
+    "industry": "Automotive",
+    "marketCap": "$14.8 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$180,000/year",
+    "requiredSkills": [
+      "Embedded Systems",
+      "Python",
+      "C++",
+      "Linux"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Lucid Motors",
+    "industry": "Automotive",
+    "marketCap": "$8.2 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$205,000/year",
+    "requiredSkills": [
+      "Robotics",
+      "C++",
+      "Linux",
+      "Python"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "BMW Group",
+    "industry": "Automotive",
+    "marketCap": "$68.9 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$160,000/year",
+    "requiredSkills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Robotics"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Volkswagen Group",
+    "industry": "Automotive",
+    "marketCap": "$78.4 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$100,000/year",
+    "requiredSkills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Python"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Toyota Motor Corporation",
+    "industry": "Automotive",
+    "marketCap": "$258.6 billion",
+    "logo": "\ud83d\ude97",
+    "salary": "$200,000/year",
+    "requiredSkills": [
+      "Python",
+      "Embedded Systems",
+      "Linux",
+      "C++"
+    ]
+  }
+]

@@ -352,6 +352,12 @@ main {
   font-weight: 600;
 }
 
+.skill-chip.from-resume {
+  background: #e6f7ee;
+  color: #1a9e5c;
+  border: 1px solid #b7ebd0;
+}
+
 .linkedin-btn {
   display: block;
   background: #0a66c2;
