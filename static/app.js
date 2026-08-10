@@ -1,3 +1,31 @@
+// ---------- Theme toggle ----------
+const themeToggle = document.getElementById("themeToggle");
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  themeToggle.title = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+}
+
+function initTheme() {
+  const saved = localStorage.getItem("jobswipe-theme");
+  if (saved) {
+    applyTheme(saved);
+    return;
+  }
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(prefersDark ? "dark" : "light");
+}
+
+themeToggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "dark" ? "light" : "dark";
+  applyTheme(next);
+  localStorage.setItem("jobswipe-theme", next);
+});
+
+initTheme();
+
 // ---------- Auth ----------
 const authScreen = document.getElementById("authScreen");
 const appEl = document.getElementById("app");

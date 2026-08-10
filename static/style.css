@@ -1,13 +1,90 @@
 * { box-sizing: border-box; }
 
+:root {
+  --bg: #f4f5f8;
+  --text: #1a1a2e;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0,0,0,0.06);
+  --border: #ddd;
+  --border-light: #ccc;
+  --input-bg: #ffffff;
+  --muted: #555;
+  --muted-light: #777;
+  --tabs-bg: #eef0f5;
+  --status-bg: #f0f0f0;
+  --footer-bg: #1a1a2e;
+  --footer-text: #ffffff;
+  --file-label-bg: #eee;
+  --skill-chip-bg: #eef0ff;
+  --toast-bg: #1a1a2e;
+  --toast-text: #ffffff;
+  --hero-grad-1: #6d5ef4;
+  --hero-grad-2: #4c3ee0;
+  --accent: #5b3ff0;
+  --accent-dark: #3a2aa0;
+  --btn-secondary-bg: #e2e2ea;
+  --btn-secondary-text: #333;
+  --btn-disabled-bg: #b9b9c9;
+}
+
+[data-theme="dark"] {
+  --bg: #14151f;
+  --text: #edeef7;
+  --card-bg: #1e2030;
+  --card-shadow: rgba(0,0,0,0.4);
+  --border: #333549;
+  --border-light: #3a3c54;
+  --input-bg: #262840;
+  --muted: #a9abc4;
+  --muted-light: #8688a3;
+  --tabs-bg: #1a1b2a;
+  --status-bg: #262840;
+  --footer-bg: #0c0d14;
+  --footer-text: #e5e6f2;
+  --file-label-bg: #2a2c44;
+  --skill-chip-bg: #2b2c52;
+  --toast-bg: #2b2c52;
+  --toast-text: #ffffff;
+  --hero-grad-1: #5b4fd6;
+  --hero-grad-2: #3a2eb8;
+  --accent: #7a6bff;
+  --accent-dark: #5b4fd6;
+  --btn-secondary-bg: #2a2c44;
+  --btn-secondary-text: #d5d6ea;
+  --btn-disabled-bg: #3a3c54;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #f4f5f8;
-  color: #1a1a2e;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .hidden { display: none !important; }
+
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  transition: transform 0.2s ease, background 0.25s ease;
+}
+
+.theme-toggle:hover { transform: scale(1.08); }
 
 /* Auth screen */
 .auth-screen {
@@ -15,27 +92,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #6d5ef4, #4c3ee0);
+  background: linear-gradient(135deg, var(--hero-grad-1), var(--hero-grad-2));
   padding: 20px;
 }
 
 .auth-card {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 14px;
   padding: 32px;
   width: 100%;
   max-width: 360px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px var(--card-shadow);
 }
 
 .auth-card h1 {
   margin: 0 0 4px;
-  color: #4c3ee0;
+  color: var(--accent);
 }
 
 .tagline {
-  color: #777;
+  color: var(--muted-light);
   margin: 0 0 20px;
   font-size: 14px;
 }
@@ -45,20 +122,20 @@ body {
   margin-bottom: 20px;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
 }
 
 .auth-tab-btn {
   flex: 1;
   padding: 10px;
   border: none;
-  background: #f0f0f5;
+  background: var(--tabs-bg);
   cursor: pointer;
   font-size: 14px;
 }
 
 .auth-tab-btn.active {
-  background: #5b3ff0;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -72,16 +149,18 @@ body {
 
 .auth-form input {
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-light);
   border-radius: 6px;
   font-size: 14px;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .auth-form button {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background: #5b3ff0;
+  background: var(--accent);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -89,7 +168,7 @@ body {
 }
 
 .auth-error {
-  color: #d93025;
+  color: #ff6b6b;
   font-size: 13px;
   min-height: 18px;
   margin: 12px 0 0;
@@ -97,7 +176,7 @@ body {
 
 /* Main app */
 .hero {
-  background: linear-gradient(90deg, #6d5ef4, #4c3ee0);
+  background: linear-gradient(90deg, var(--hero-grad-1), var(--hero-grad-2));
   color: #fff;
   text-align: center;
   padding: 24px 16px;
@@ -124,8 +203,8 @@ body {
   display: flex;
   gap: 24px;
   padding: 0 24px;
-  background: #eef0f5;
-  border-bottom: 1px solid #ddd;
+  background: var(--tabs-bg);
+  border-bottom: 1px solid var(--border);
 }
 
 .tab-btn {
@@ -133,14 +212,14 @@ body {
   border: none;
   padding: 14px 4px;
   font-size: 15px;
-  color: #555;
+  color: var(--muted);
   cursor: pointer;
   border-bottom: 2px solid transparent;
 }
 
 .tab-btn.active {
-  color: #5b3ff0;
-  border-bottom-color: #5b3ff0;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
   font-weight: 600;
 }
 
@@ -157,7 +236,7 @@ main {
 #searchInput {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 8px;
   margin-bottom: 16px;
   font-size: 14px;
@@ -174,9 +253,9 @@ main {
 .swipe-card {
   position: absolute;
   inset: 0;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 20px var(--card-shadow);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -190,10 +269,10 @@ main {
 
 .swipe-card .job-logo { font-size: 48px; margin-bottom: 8px; }
 .swipe-card .job-name { font-size: 20px; font-weight: 700; margin: 0 0 4px; }
-.swipe-card .job-industry { color: #5b3ff0; margin: 0 0 10px; }
-.swipe-card .job-marketcap { color: #444; font-size: 14px; margin: 0 0 6px; }
+.swipe-card .job-industry { color: var(--accent); margin: 0 0 10px; }
+.swipe-card .job-marketcap { color: var(--muted); font-size: 14px; margin: 0 0 6px; }
 .swipe-card .job-salary { color: #1a9e5c; font-weight: 600; }
-.swipe-card .job-compat { color: #3b5bdb; font-weight: 600; }
+.swipe-card .job-compat { color: var(--accent); font-weight: 600; }
 
 .swipe-badge {
   position: absolute;
@@ -211,7 +290,7 @@ main {
 
 .swipe-empty {
   text-align: center;
-  color: #888;
+  color: var(--muted-light);
   padding-top: 120px;
 }
 
@@ -230,21 +309,21 @@ main {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 10px var(--card-shadow);
 }
 
-.control-btn.skip { background: #fff; color: #d93025; }
-.control-btn.like { background: #fff; color: #1a9e5c; }
+.control-btn.skip { background: var(--card-bg); color: #d93025; }
+.control-btn.like { background: var(--card-bg); color: #1a9e5c; }
 
 /* Job list (below stack, all jobs) */
 .job-list { margin-top: 10px; }
 
 .job-card {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 10px;
   padding: 18px 20px;
   margin-bottom: 14px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px var(--card-shadow);
 }
 
 .job-top {
@@ -257,11 +336,11 @@ main {
 .job-info { display: flex; gap: 12px; }
 .job-logo { font-size: 32px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
 .job-name { font-weight: 700; font-size: 16px; margin: 0; }
-.job-industry { color: #5b3ff0; font-size: 14px; margin: 2px 0 0; }
-.job-marketcap { color: #444; font-size: 14px; margin: 6px 0 12px; }
+.job-industry { color: var(--accent); font-size: 14px; margin: 2px 0 0; }
+.job-marketcap { color: var(--muted); font-size: 14px; margin: 6px 0 12px; }
 .job-meta { text-align: right; font-size: 14px; white-space: nowrap; }
 .job-salary { color: #1a9e5c; font-weight: 600; }
-.job-compat { color: #3b5bdb; font-weight: 600; margin-left: 10px; }
+.job-compat { color: var(--accent); font-weight: 600; margin-left: 10px; }
 .job-actions { display: flex; gap: 10px; }
 
 .btn-save, .btn-apply {
@@ -274,17 +353,17 @@ main {
   cursor: pointer;
 }
 
-.btn-save { background: #5b3ff0; color: #fff; }
-.btn-save.saved { background: #3a2aa0; }
-.btn-apply { background: #e2e2ea; color: #333; }
-.btn-apply.applied { background: #b9b9c9; cursor: default; }
+.btn-save { background: var(--accent); color: #fff; }
+.btn-save.saved { background: var(--accent-dark); }
+.btn-apply { background: var(--btn-secondary-bg); color: var(--btn-secondary-text); }
+.btn-apply.applied { background: var(--btn-disabled-bg); cursor: default; }
 
 /* Profile */
 .profile-card {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 10px;
   padding: 24px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px var(--card-shadow);
 }
 
 .profile-top { display: flex; gap: 16px; margin-bottom: 16px; }
@@ -293,7 +372,7 @@ main {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #ddd;
+  background: var(--border-light);
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -302,10 +381,12 @@ main {
 
 .profile-fields input, #bioInput {
   padding: 10px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-light);
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 #bioInput { margin-bottom: 14px; resize: vertical; font-family: inherit; }
@@ -320,8 +401,8 @@ main {
 
 .file-label {
   position: relative;
-  background: #eee;
-  border: 1px solid #ccc;
+  background: var(--file-label-bg);
+  border: 1px solid var(--border-light);
   border-radius: 4px;
   padding: 6px 12px;
   cursor: pointer;
@@ -344,8 +425,8 @@ main {
 }
 
 .skill-chip {
-  background: #eef0ff;
-  color: #4c3ee0;
+  background: var(--skill-chip-bg);
+  color: var(--accent);
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 12px;
@@ -373,7 +454,7 @@ main {
 .linkedin-btn.connected { background: #16405e; }
 
 .save-btn {
-  background: #5b3ff0;
+  background: var(--accent);
   color: #fff;
   border: none;
   padding: 10px 18px;
@@ -386,18 +467,18 @@ main {
 .match-list { list-style: none; padding: 0; }
 
 .match-list li {
-  background: #fff;
+  background: var(--card-bg);
   padding: 12px 16px;
   border-radius: 8px;
   margin-bottom: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px var(--card-shadow);
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background: #1a1a2e;
-  color: #fff;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   font-size: 13px;
 }
 
@@ -406,11 +487,11 @@ footer {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #1a1a2e;
-  color: #fff;
+  background: var(--toast-bg);
+  color: var(--toast-text);
   padding: 14px 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px var(--card-shadow);
   z-index: 999;
   font-size: 14px;
 }
